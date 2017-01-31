@@ -15,22 +15,22 @@ class WeixinInterface:
         self.render = web.template.render(self.templates_root)
 
     def GET(self):
-        #»ñÈ¡ÊäÈë²ÎÊı
+        #ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         data = web.input()
         signature=data.signature
         timestamp=data.timestamp
         nonce=data.nonce
-        echostr=data.echostr
-        #×Ô¼ºµÄtoken
-        token="hanfengyu" #ÕâÀï¸ÄĞ´ÄãÔÚÎ¢ĞÅ¹«ÖÚÆ½Ì¨ÀïÊäÈëµÄtoken
-        #×ÖµäĞòÅÅĞò
+        echostr =data.echostr
+        #ï¿½Ô¼ï¿½ï¿½ï¿½token
+        token="hanfengyu" #ï¿½ï¿½ï¿½ï¿½ï¿½Ğ´ï¿½ï¿½ï¿½ï¿½Î¢ï¿½Å¹ï¿½ï¿½ï¿½Æ½Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½token
+        #ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         list=[token,timestamp,nonce]
         list.sort()
         sha1=hashlib.sha1()
         map(sha1.update,list)
         hashcode=sha1.hexdigest()
-        #sha1¼ÓÃÜËã·¨        
+        #sha1ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨
 
-        #Èç¹ûÊÇÀ´×ÔÎ¢ĞÅµÄÇëÇó£¬Ôò»Ø¸´echostr
+        #ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¢ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½echostr
         if hashcode == signature:
             return echostr
