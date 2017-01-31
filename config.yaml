@@ -1,5 +1,5 @@
 name: pytesthanfy
-version: 1
+version: 7
 
 libraries:
 - name: "webpy" 
