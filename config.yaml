@@ -2,8 +2,8 @@ name: pytesthanfy
 version: 1
 
 libraries:
-- name: webpy 
+- name: "webpy" 
   version: "0.38"
 
-- name: lxml
-  version: "3.6.4"
+- name: "lxml"
+  version: "2.3.4"
